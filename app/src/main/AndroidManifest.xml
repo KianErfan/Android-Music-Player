@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.example.musicplayer">  <!-- THIS LINE WAS MISSING -->
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Modern permission for Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <!-- Legacy permission for older devices -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="32" />
+    <!-- Required for foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Required for Visualizer -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+
+    <application
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.MusicPlayer"
+            tools:targetApi="31">
+
+        <!-- Declare the Service -->
+        <service
+                android:name=".MusicService"
+                android:enabled="true"
+                android:exported="false" />
+
+        <activity
+                android:name=".PlayerActivity"
+                android:exported="false"
+                android:parentActivityName=".MainActivity"/>
+        <activity
+                android:name=".MainActivity"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
