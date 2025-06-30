@@ -1,4 +1,5 @@
-Android Music Player 🎵
+### Android Music Player 🎵
+
 ![alt text](https://img.shields.io/badge/License-MIT-green.svg) ![alt text](https://img.shields.io/badge/API-21%2B-brightgreen.svg) ![alt text](https://img.shields.io/badge/Language-Java-blue.svg)
 
 A modern, robust, and aesthetically pleasing music player for Android. This project demonstrates modern Android development practices, including foreground services for background playback, the `MediaStore` API for efficient music discovery, and a clean UI built with `RecyclerView`.
