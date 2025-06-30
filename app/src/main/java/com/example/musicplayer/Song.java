@@ -7,7 +7,7 @@ public class Song implements Serializable {
     private final long id;
     private final String title;
     private final String artist;
-    private final String uriString; // This should be the only location identifier
+    private final String uriString;
 
     public Song(long id, String title, String artist, String uriString) {
         this.id = id;
