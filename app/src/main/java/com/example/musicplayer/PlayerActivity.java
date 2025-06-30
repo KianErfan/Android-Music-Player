@@ -10,7 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.media.MediaMetadataRetriever;
 import android.media.audiofx.Visualizer;
-import android.net.Uri; // Import Uri class
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -167,7 +167,7 @@ public class PlayerActivity extends AppCompatActivity {
         totalTimeTextView.setText(formatTime(duration));
         updatePlayPauseButton();
 
-        // ** THIS IS THE CORRECTED LINE **
+
         loadAlbumArt(currentSong.getUriString());
 
         // Start updating seekbar and time
@@ -189,7 +189,7 @@ public class PlayerActivity extends AppCompatActivity {
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
         try {
             Uri uri = Uri.parse(uriString);
-            retriever.setDataSource(this, uri); // This line is correct
+            retriever.setDataSource(this, uri);
             byte[] art = retriever.getEmbeddedPicture();
             if (art != null) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(art, 0, art.length);
