@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SongAdapter.OnSon
         ContentResolver contentResolver = getContentResolver();
         Uri musicUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
 
-        // We do NOT need the DATA column. We only need the ID.
+
         String[] projection = {
                 MediaStore.Audio.Media._ID,
                 MediaStore.Audio.Media.TITLE,
